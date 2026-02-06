@@ -1,0 +1,42 @@
+=== Question 1 ===
+#Answer below
+a mutable data_structures are the type that allows you to change the you started within
+
+examples are :
+lists and dictionaries
+
+an immutable data_structures don't allow you the change the date once it the created so you need to create a new one
+
+examples are :
+sets and tuples
+
+immutability would be beneficial if you are working with information that should not be changed later on like grades or passwords
+
+=== Question 2 ===
+#Answer below
+i would use a 
+
+ist an i'm organising loss data with no needed structure
+
+set when i want the data to never be changed and none of them should show up more than once
+
+dictionaries when i want to group the data under one key
+
+they are bast for:
+
+list -> stored ramdow data that can be changed later
+Because it takes in data types of data at any moment and can be changed too
+
+set -> organising date
+Because it does not allow duplicates and arranges them in a-z ober
+
+dictionaries -> kay value type
+Because it takes in kay and value so you can alocate a name to a number and more
+
+=== Question 3 ===
+#Answer below
+each student's information must be stored in one place and unber name and student id that shouldn't/never be changed but be flexable enougth to allow some changes 
+
+set the information would be changed
+dictionaries labol the information
+list store loss information that can be changed 
