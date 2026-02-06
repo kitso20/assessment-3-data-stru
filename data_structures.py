@@ -63,7 +63,14 @@ def batch_api_dispatcher(user_ids: list | tuple) -> list:
 # ============================
 def social_graph_inverter(following_list: dict) -> dict:
     
-    return {}
+    ew = {}
+    for k,v in following_list.items():
+        for n in v:
+            if n not in ew:
+                ew[n] = []
+            ew[n].append(k)
+
+    return ew
 
 
 # ============================
