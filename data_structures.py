@@ -4,15 +4,13 @@
 # ============================
 def split_coords(coordinates: list) -> tuple:
     ta = [[],[]]
+    if any(len(item) != 2 for item in coordinates):
+        raise ValueError
     for i in coordinates:
         ta[0].append(i[0])
         ta[1].append(i[1])
-    if len([0]) == len(ta[1]):
-        return tuple(ta)
-    else:
-        raise ValueError
-
-
+    
+    return tuple(ta)
 # ============================
 # TODO:Question 2
 # ============================
@@ -48,14 +46,17 @@ def group_by_category(items: list) -> dict:
 # TODO:Question 5
 # ============================
 def batch_api_dispatcher(user_ids: list | tuple) -> list:
-    new = []
-    into = []
-    while len(into) != 5:
-        fir = user_ids.pop(0)
-        into.append(fir)
-    
-    
-        return []
+    result = []
+    while len(user_ids) > 0:
+        if len(user_ids) > 5:
+            new = user_ids[:5]
+            result.append(new)
+            del user_ids[:5]
+        else:
+            result.append(user_ids[:])
+            del user_ids[:]
+
+    return result
 
 
 # ============================
