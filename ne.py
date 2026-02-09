@@ -1,10 +1,14 @@
-def split_coords(coordinates: list) -> tuple:
-    ta = [[],[]]
-    if any(len(item) != 2 for item in coordinates):
-        raise ValueError
-    for i in coordinates:
-        ta[0].append(i[0])
-        ta[1].append(i[1])
-    
-    return tuple(ta)
-print(split_coords([(1, 2), (3, 4), (5, 6)]))
+def batch_api_dispatcher(user_ids: list | tuple) -> list:
+    result = []
+    while len(user_ids) > 0:
+        if len(user_ids) > 5:
+            new = user_ids[:5]
+            result.append(new)
+            del user_ids[:5]
+        else:
+            result.append(user_ids[:])
+            del user_ids[:]
+
+    return result
+
+print(batch_api_dispatcher(['A', 'B', 'C', 'D', 'E', 'F']))
