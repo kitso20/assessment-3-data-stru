@@ -46,19 +46,25 @@ def group_by_category(items: list) -> dict:
 # TODO:Question 5
 # ============================
 def batch_api_dispatcher(user_ids: list | tuple) -> list:
+    # user_ids = list(user_ids)
+    # result = []
+    # while len(user_ids) > 0:
+    #     if len(user_ids) > 5:
+    #         new = user_ids[:5]
+    #         result.append(new)
+    #         del user_ids[:5]
+    #     else:
+    #         result.append(user_ids[:])
+    #         del user_ids[:]
+
+    # return result
+    res = []
     user_ids = list(user_ids)
-    result = []
     while len(user_ids) > 0:
-        if len(user_ids) > 5:
-            new = user_ids[:5]
-            result.append(new)
-            del user_ids[:5]
-        else:
-            result.append(user_ids[:])
-            del user_ids[:]
-
-    return result
-
+        pop_item = user_ids[:5]
+        res.append(pop_item)
+        del user_ids[:5]
+    return res
 
 # ============================
 # TODO:Question 6
