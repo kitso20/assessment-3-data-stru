@@ -79,11 +79,18 @@ def social_graph_inverter(following_list: dict) -> dict:
 # TODO:Question 7
 # ============================
 def fibonacci_generator(n: int) -> list:
-    lst = [0,1]
-    if len(lst) == n:
-        return lst
+    if n < 0:
+        raise ValueError
+    if n == 0:
+        return []
+    if n == 1:
+        return [0]
+    if n == 2:
+        return [0, 1]
     else:
-        lst.append(fibonacci_generator(lst[-1]+lst))
+        res = fibonacci_generator(n - 1)
+        res.append(res[-1] + res[-2])
+        return res
 
 
 
